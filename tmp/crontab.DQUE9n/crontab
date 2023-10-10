@@ -1,0 +1,2 @@
+30 5 * * 0,2,3,4,5,6 bash /var/mc-server/bash/restart-and-backup.sh
+30 5 * * 1 bash /var/mc-server/bash/reboot-and-backup.sh
