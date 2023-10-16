@@ -5,12 +5,12 @@ MC_PATH='/var/mc-server'
 # バックアップ収納パス
 BK_PATH='/var/mc-backups'
 # バックアップ時刻形式
-BK_TIME=`date +%Y%m%d-%H%M%S`
+BK_TIME=`date +%Y-%m-%d-%H:%M:%S`
 # バックアップファイル名
 BK_NAME="${BK_PATH}/mc_backup_${BK_TIME}.tar.gz"
 # バックアップ保存世代数
-BK_GEN="3"
-TAIL_GEN="+4"
+BK_GEN="6"
+TAIL_GEN="+7"
 
 tar cfvz $BK_NAME $MC_PATH
 
@@ -27,7 +27,7 @@ else
   eval $IS_TIME
 fi
 # バックアップファイルをローカルのバックアップフォルダで世代管理
-TGT_FILE="${BK_PATH}/mc_backup_????????-??????.tar.gz"
+TGT_FILE="${BK_PATH}/mc_backup_????-??-??-??:??:??.tar.gz"
 CHK_GEN=$(ls -1 ${TGT_FILE}|wc -l)
 # 削除対象ファイルリスト
 DEL_LIST=$(ls -1 -t ${TGT_FILE}|tail -n ${TAIL_GEN})
