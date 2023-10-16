@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # dir移動
 cd /var/mc-server

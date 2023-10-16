@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo bash ./alert.sh
+sudo bash ./alertjs.sh
 
 sudo bash ./stop.sh
 
