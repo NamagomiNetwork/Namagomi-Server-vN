@@ -1,15 +1,15 @@
 [Unit]
-Description=mc-server
+Description=mcserver
 After=network-online.target
 
 [Service]
-User=minecraft
-Group=minecraft
-WorkingDirectory=/var/bash
-ExecStart=/bin/bash /var/bash/start.sh
+WorkingDirectory=/srv/mc
+ExecStart=/bin/bash /srv/bash/start.sh
+ExecStop=/bin/bash /srv/bash/stop.sh
 Restart=always
 KillMode=process
 TimeoutStartSec=180
+TimeoutStopSec=180
 Type=forking
 
 [Install]
